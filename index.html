@@ -79,7 +79,65 @@
             <li><strong>README.md:</strong> وثيقة التعريف والدليل الميداني.</li>
             <li><strong>LICENSE:</strong> الرخصة المفتوحة للمشاع العلمي.</li>
         </ul>
+    <!-- قسم مُوجّهات تفعيل بروتوكول البوصلة المتدرج -->
+    <div style="background: #1f242c; border: 1px solid #30363d; padding: 20px; border-radius: 10px; margin: 25px 0; direction: rtl; text-align: right;">
+        <h2 style="margin-top: 0; color: #58a6ff; font-size: 1.2em;">🧭 مُوجّهات تفعيل بروتوكول البوصلة</h2>
+        <p style="color: #8b949e; font-size: 0.9em;">اختر المستوى المناسب لتفاعلك وانقر للنسخ الفوري:</p>
 
+        <!-- 1. المستوى العام -->
+        <div style="background: #161b22; padding: 12px; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 12px;">
+            <h3 style="margin-top: 0; color: #58a6ff; font-size: 1em;">1. المستوى العام (للمستخدم اليومي)</h3>
+            <div id="prompt-general" style="background: #0d1117; padding: 10px; border: 1px solid #30363d; border-radius: 6px; font-size: 0.85em; color: #c9d1d9; margin-bottom: 8px; direction: ltr; text-align: left; user-select: all;">
+                تفاعل معي كشريك استخلافي يساعدني في تبسيط الأفكار، والتفكير المنطقي، وضمان الوضوح الأخلاقي والإنساني في كل إجابة ضمن مبادئ بروتوكول البوصلة (Compass Protocol).
+            </div>
+            <button onclick="copyPrompt('prompt-general', 'btn-general')" id="btn-general" style="background: #238636; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85em;">
+                📋 نسخ الموجه العام
+            </button>
+        </div>
+
+        <!-- 2. المستوى البرمجي -->
+        <div style="background: #161b22; padding: 12px; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 12px;">
+            <h3 style="margin-top: 0; color: #2ea043; font-size: 1em;">2. المستوى البرمجي (للمطورين والتقنيين)</h3>
+            <div id="prompt-code" style="background: #0d1117; padding: 10px; border: 1px solid #30363d; border-radius: 6px; font-size: 0.85em; color: #c9d1d9; margin-bottom: 8px; direction: ltr; text-align: left; user-select: all;">
+                تفاعل معي كشريك استخلافي تقني وفق بروتوكول البوصلة (Compass Protocol): ادمج الحوكمة البرمجية والأمان مسبقاً، واقترح حلولاً وأكواداً تتوافق مع معايير الاستدامة وكفاءة الأنظمة والمسؤولية الأخلاقية.
+            </div>
+            <button onclick="copyPrompt('prompt-code', 'btn-code')" id="btn-code" style="background: #238636; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85em;">
+                📋 نسخ الموجه البرمجي
+            </button>
+        </div>
+
+        <!-- 3. المستوى العميق -->
+        <div style="background: #161b22; padding: 12px; border: 1px solid #30363d; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #8957e5; font-size: 1em;">3. المستوى العميق (للباحثين والمفكرين)</h3>
+            <div id="prompt-deep" style="background: #0d1117; padding: 10px; border: 1px solid #30363d; border-radius: 6px; font-size: 0.85em; color: #c9d1d9; margin-bottom: 8px; direction: ltr; text-align: left; user-select: all;">
+                تفاعل معي كشريك استخلافي بحثي وفق بروتوكول البوصلة (Compass Protocol): مارس معي نقداً بناءً، وفحصاً دقيقاً للفرضيات الفلسفية والمعرفية، وراقب الفجوات لخدمة المعرفة الإنسانية المستدامة بعمق وتحليل شامل.
+            </div>
+            <button onclick="copyPrompt('prompt-deep', 'btn-deep')" id="btn-deep" style="background: #238636; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85em;">
+                📋 نسخ الموجه العميق
+            </button>
+        </div>
+    </div>
+
+    <!-- دالة الجافاسكريبت للنسخ (توضع مرة واحدة هنا أو في نهاية الملف قبل الوسم </body>) -->
+    <script>
+    function copyPrompt(elementId, btnId) {
+        const textElement = document.getElementById(elementId);
+        const btn = document.getElementById(btnId);
+        
+        navigator.clipboard.writeText(textElement.innerText).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = "تم النسخ بنجاح! ✅";
+            btn.style.background = "#2ea043";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "#238636";
+            }, 2000);
+        }).catch(err => {
+            console.error('فشل النسخ: ', err);
+        });
+    }
+    </script>
         <div class="footer">
             <p>© 2026 Compass Protocol — Ammar Al-Ansi</p>
         </div>
